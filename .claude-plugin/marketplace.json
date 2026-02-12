@@ -1,0 +1,16 @@
+{
+  "name": "agent-skill-gogcli",
+  "owner": {
+    "name": "Tocyuki"
+  },
+  "metadata": {
+    "description": "Google Workspace CLI (gogcli) skill plugin for Claude Code"
+  },
+  "plugins": [
+    {
+      "name": "gogcli",
+      "source": "./",
+      "description": "Google Workspace CLI tool gogcli skills for Gmail, Calendar, Drive, Sheets, Tasks, Docs, Slides, Contacts, Chat, Classroom, and more"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "name": "gogcli",
+  "description": "Google Workspace CLI (gogcli) skill - Gmail, Calendar, Drive, Sheets, Tasks etc. をCLIで操作",
+  "version": "1.0.0",
+  "author": {
+    "name": "Tocyuki"
+  },
+  "repository": "https://github.com/Tocyuki/agent-skill-gogcli",
+  "license": "MIT",
+  "keywords": [
+    "google-workspace",
+    "gmail",
+    "calendar",
+    "drive",
+    "sheets",
+    "tasks",
+    "cli",
+    "gogcli"
+  ]
+}
