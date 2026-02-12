@@ -16,11 +16,38 @@ Install gogcli first / 先に gogcli をインストール:
 brew install steipete/tap/gogcli
 ```
 
-Then authenticate / 認証:
+### OAuth Client Secret / クライアントシークレットの取得
+
+Get OAuth credentials from Google Cloud Console / Google Cloud Console から OAuth 認証情報を取得:
+
+Official guide / 公式ガイド: [アクセス認証情報を作成する](https://developers.google.com/workspace/guides/create-credentials?hl=ja)
+
+1. Open [Google Cloud Console](https://console.cloud.google.com/apis/credentials) / Google Cloud Console を開く
+2. Create a project (if not exists) / プロジェクトを作成（未作成の場合）
+3. Enable required APIs / 必要な API を有効化:
+   - [Gmail API](https://console.cloud.google.com/apis/api/gmail.googleapis.com)
+   - [Calendar API](https://console.cloud.google.com/apis/api/calendar-json.googleapis.com)
+   - [Drive API](https://console.cloud.google.com/apis/api/drive.googleapis.com)
+   - [Sheets API](https://console.cloud.google.com/apis/api/sheets.googleapis.com)
+   - [Tasks API](https://console.cloud.google.com/apis/api/tasks.googleapis.com)
+   - [People API](https://console.cloud.google.com/apis/api/people.googleapis.com)
+4. Configure [OAuth consent screen](https://console.cloud.google.com/auth/branding) / OAuth 同意画面を設定
+5. Add [test users](https://console.cloud.google.com/auth/audience) if in testing mode / テストモードの場合テストユーザーを追加
+6. Create [OAuth client](https://console.cloud.google.com/auth/clients) / OAuth クライアントを作成:
+   - Application type: **Desktop app** / アプリケーションの種類: **デスクトップ アプリ**
+   - Download the JSON file / JSON ファイルをダウンロード
+
+### Authentication / 認証
 
 ```bash
-gog auth credentials ~/Downloads/client_secret_xxx.json
+# Register client secret / クライアントシークレットを登録
+gog auth credentials set ~/Downloads/client_secret_xxx.json
+
+# Authorize account (opens browser) / アカウント認証（ブラウザが開く）
 gog auth add you@gmail.com
+
+# Verify / 動作確認
+gog auth status
 ```
 
 ### Install Plugin / プラグインインストール
